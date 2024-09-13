@@ -16,8 +16,37 @@ change the image name and version to your own need:
         docker run -p 127.0.0.1:docker_port:app_port image_name:version
 
 
+## Object define
+**Response Object**
+
+        {
+            "code": integer - similar to html code,
+            "message": string,
+            "data": vary depend on which service is called
+        }
+
+
 ## Usage
-This project is used for personal coding practice.
+1. "/"
+    - GET: html home page.
+2. "/demo-read-text"
+    - GET: html page to upload image.
+    - POST: upload image and get text from response.
+3. "/api"
+    - POST:
+        - Request: None
+        - Response "data": a welcome message.
+4. "/api/read-text"
+    - POST:
+        - Request: send with content type "multipart/form-data"
+        
+                "image": image file to read text
+        - Response "data":
+        
+                {
+                    "texts": list of read text,
+                    "decoded_texts": list of read text decoded (remove accents)
+                }
 
 
 ## Support
@@ -26,16 +55,16 @@ nguyennta@icloud.com
 
 ## Contributing
 Project structure:
-- README.md: this project instruction file.
-- app.py: main file to run this project (Flask application is created here).
-- requirements.txt: file contain the dependencies that need to install.
-- Dockerfile: file used to containerize this project with docker.
 - model: contain AI models, include binary file or weights file, best point file.
-- service: contain service file.
-- utility: contain utility file.
 - route: contain file for routing.
-- templates: contain html file.
+- service: contain service file.
 - static: contain static file such as css, images.
+- templates: contain html file.
+- utility: contain utility file.
+- app.py: main file to run this project (Flask application is created here).
+- Dockerfile: file used to containerize this project with docker.
+- README.md: this project instruction file.
+- requirements.txt: file contain the dependencies that need to install.
 
 
 ## Authors
@@ -43,10 +72,10 @@ This project is done by nguyennta@icloud.com
 
 
 ## License
-This is just a personal project for practice coding. It uses MMOCR and Tesseract for OCR task, so it follow 
-the license of these libraries.
+This is just a personal project for practice coding. It uses Tesseract for OCR task, so it follow 
+the license of Tesseract.
 
 
 ## Project status
-- Developing
+- Finished
 - Current host: local

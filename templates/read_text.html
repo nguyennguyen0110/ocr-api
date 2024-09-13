@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Nguyen Nguyen">
+    <meta name="description" content="Render html for Read Text">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read Text</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+<header>
+    <h1>Read Text</h1>
+    <nav>
+        <ul class="menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/demo-read-tag">read-text</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <h2>Read text from image.</h2>
+    <h3>Upload image:</h3>
+    <form method="POST" enctype="multipart/form-data">
+        <ul>
+            <li>
+                <label for="input">image: </label>
+                <input id="input" type="file" name="image">
+            </li>
+        </ul>
+
+        <div class="form_button"> <input type="submit" value="Get result"> </div>
+    </form>
+    {% if "code" in result %}
+    <h3>Result:</h3>
+    <ul>
+        <li><p>"code": {{result["code"]}}</p></li>
+        <li><p>"message": {{result["message"]}}</p></li>
+        {% if result["data"] %}
+        <li>"data":
+            <table>
+                <thead>
+                    <tr>
+                        <th>texts</th>
+                        <th>decoded_texts</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in range(result["data"]["texts"]|length) %}
+                    <tr>
+                        <td>{{result["data"]["texts"][i]}}</td>
+                        <td>{{result["data"]["decoded_texts"][i]}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </li>
+        {% else %}
+        <li>"data": null</li>
+        {% endif %}
+    </ul>
+    {% endif %}
+</main>
+
+<footer>
+    <br>
+    <hr>
+    <p>by: Nguyen Nguyen</p>
+    <p>nguyennta@icloud.com</p>
+    <p>+84 77 777 5995</p>
+    <br>
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+body {
+    background: black;
+    color: white;
+}
+
+.menu {
+    list-style-type: none;
+    display: flex;
+    background: red;
+    height: 3em;
+    align-items: center;
+}
+
+.menu>li {
+    margin: 1em;
+}
+
+.two_in_one {
+    display: flex;
+    align-items: center;
+}
+
+.two_in_one div {
+    margin: 0.5em 1em;
+}
+
+.read_tag_json {
+    width: 99vw;
+    display: flex;
+    align-items: start;
+}
+
+.read_tag_json div {
+    margin: 0.5em;
+}
+
+.form_button {
+    text-align: center;
+}
+
+.form_button input {
+    height: 2.5em;
+    width: 10em;
+    background-color: pink;
+    border-radius: 0.5em;
+}
+
+.add_button {
+    background-color: pink;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+pre {
+    background-color: #202020;
+    padding: 5em;
+    color: white;
+    border-radius: 1em;
+}
+
+table, th, td {
+    border: 0.1em solid white;
+    border-collapse: collapse;
+    padding: 0.2em 0.5em;
+}
+
+th {
+    text-align: center;
+}
+
+td.right_align {
+    text-align: right;
+}
+
+form {
+    border: 0.1em solid white;
+    border-radius: 1em;
+    width: 55em;
+    margin: auto
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ol li a {
+    color: #1E90FF;
+}
+
+input {
+    margin: 0.2em;
+}
